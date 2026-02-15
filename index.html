@@ -1,4 +1,5 @@
-   <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,30 +83,71 @@
     </div>
 </section>
 
+<!-- BOOKS SECTION -->
+
 <section id="books" class="fade">
-    <h2>Books & Publications</h2>
+    <h2>Books</h2>
 
-    <div class="book-container">
-
-        <div class="book-card">
-            <h3>Novel Food Analysis Techniques and Applications</h3>
-            <p>Year: 2026</p>
-            <a href="#" class="btn">View Book</a>
-        </div>
-
-        <div class="book-card">
-            <h3>Mushroom Bioactives: Bridging Food & Nanotechnology</h3>
-            <p>Year: 2025</p>
-            <a href="#" class="btn">View Book</a>
-        </div>
-
-        <div class="book-card">
-            <h3>Food Waste Valorization: Green Techniques</h3>
-            <p>Year: 2025</p>
-            <a href="#" class="btn">View Book</a>
-        </div>
-
+    <div class="card">
+        <h3>Novel Food Analysis Techniques and Applications</h3>
+        <a href="https://link.springer.com/book/10.1007/978-1-0716-4787-5" class="btn" target="_blank">View Book</a>
     </div>
+
+    <div class="card">
+        <h3>Mushroom Bioactives</h3>
+        <a href="https://link.springer.com/book/10.1007/978-3-032-00789-6" class="btn" target="_blank">View Book</a>
+    </div>
+
+    <div class="card">
+        <h3>Food Waste Valorization</h3>
+        <a href="https://link.springer.com/book/10.1007/978-1-0716-4646-5" class="btn" target="_blank">View Book</a>
+    </div>
+
+    <div class="card">
+        <h3>Fortified Foods</h3>
+        <a href="https://link.springer.com/book/10.1007/978-1-0716-4346-4" class="btn" target="_blank">View Book</a>
+    </div>
+
+    <div class="card">
+        <h3>Sports Nutrition Methods</h3>
+        <a href="https://link.springer.com/book/10.1007/978-1-0716-4370-9" class="btn" target="_blank">View Book</a>
+    </div>
+
+    <div class="card">
+        <h3>Extracellular Polysaccharides</h3>
+        <a href="https://link.springer.com/book/10.1007/978-3-031-94472-7" class="btn" target="_blank">View Book</a>
+    </div>
+
+    <div class="card">
+        <h3>Physiological Perspectives on Food Safety</h3>
+        <a href="https://link.springer.com/book/10.1007/978-3-031-94582-3" class="btn" target="_blank">View Book</a>
+    </div>
+
+    <div class="card">
+        <h3>Nanofuel</h3>
+        <a href="https://link.springer.com/book/10.1007/978-981-96-5471-0" class="btn" target="_blank">View Book</a>
+    </div>
+
+    <div class="card">
+        <h3>Bioactive Extraction and Application</h3>
+        <a href="https://link.springer.com/book/10.1007/978-1-0716-3601-5" class="btn" target="_blank">View Book</a>
+    </div>
+
+    <div class="card">
+        <h3>Biofilm Applications</h3>
+        <a href="https://link.springer.com/book/10.1007/978-3-031-85205-3" class="btn" target="_blank">View Book</a>
+    </div>
+
+    <div class="card">
+        <h3>Bioactive Ingredients Volume 2</h3>
+        <a href="https://link.springer.com/book/10.1007/978-981-96-4379-0" class="btn" target="_blank">View Book</a>
+    </div>
+
+    <div class="card">
+        <h3>Bioactive Ingredients Volume 1</h3>
+        <a href="https://link.springer.com/book/10.1007/978-981-96-3663-1" class="btn" target="_blank">View Book</a>
+    </div>
+
 </section>
 
 <section id="contact" class="fade">
@@ -126,21 +168,57 @@
     <p>© 2026 Anuj Kumar Gupta | All Rights Reserved</p>
 </footer>
 
-<!-- ✅ SCROLL FADE FIX -->
+<!-- Typing Script -->
+<script>
+const textArray = [
+"Future Food Technologist",
+"Diploma Student - Food Processing Technology",
+"Industrial Training Completed at Keventer",
+"Passionate About Food Innovation"
+];
+
+let typingElement = document.querySelector(".typing");
+let textIndex = 0;
+let charIndex = 0;
+
+function typeEffect() {
+    if (charIndex < textArray[textIndex].length) {
+        typingElement.textContent += textArray[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect, 80);
+    } else {
+        setTimeout(eraseEffect, 1500);
+    }
+}
+
+function eraseEffect() {
+    if (charIndex > 0) {
+        typingElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseEffect, 40);
+    } else {
+        textIndex++;
+        if (textIndex >= textArray.length) textIndex = 0;
+        setTimeout(typeEffect, 300);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(typeEffect, 500);
+});
+</script>
+
 <script>
 const faders = document.querySelectorAll(".fade");
 
-function revealOnScroll() {
+window.addEventListener("scroll", () => {
     faders.forEach(section => {
         const rect = section.getBoundingClientRect();
         if (rect.top < window.innerHeight - 100) {
             section.classList.add("show");
         }
     });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+});
 </script>
 
 </body>
